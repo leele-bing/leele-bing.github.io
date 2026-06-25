@@ -8,13 +8,6 @@ profile:
   align: right
   image: bing.jpeg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <div class="profile-links">
-      <a href="mailto:chnxbing1@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://scholar.google.com/citations?user=7lnJtCgAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-      <a href="https://github.com/leele-bing" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="/assets/site/pdf/resume_1_0_0.pdf" title="CV (zh)">CV</a>
-    </div>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
@@ -34,9 +27,10 @@ latest_posts:
 
 <section class="home-section home-about">
 
-  <p>I am a final-year Ph.D. student in the Department of Electrical and Electronic Engineering at Southern University of Science and Technology (SUSTech). I work on robotic motion planning and autonomous systems at <a href="http://robotics.lonwin.net/">RPAI Lab</a> in Shenzhen, supervised by Prof. <a href="https://scholar.google.com/citations?user=DxDCU7AAAAAJ&hl=zh-CN">Max Q.-H. Meng</a> and Prof. <a href="https://scholar.google.com/citations?user=08U8joq2FOQC&hl=zh-CN">Jiankun Wang</a>. Previously, I received the B.Eng. degree from the Department of Electrical and Electronic Engineering at SUSTech in 2020, studying flexible electronic sensors and devices with Prof. <a href="https://sse.cuhk.edu.cn/en/faculty/terrytaoye">Terry Ye</a>.</p>
+  <p>I am a final-year Ph.D. student in the Department of Electrical and Electronic Engineering at Southern University of Science and Technology (SUSTech). I am working at the intersection of robotics & AI, supervised by Prof. <a href="https://scholar.google.com/citations?user=DxDCU7AAAAAJ&hl=zh-CN">Max Q.-H. Meng</a> and Prof. <a href="https://jkwang1992.github.io/">Jiankun Wang</a>. Before that, I received my B.Eng. degree from the same department at SUSTech in 2020, where I worked on flexible electronic sensors with Prof. <a href="https://sse.cuhk.edu.cn/en/faculty/terrytaoye">Terry Tao Ye</a>.</p>
 
-  <p>Currently, my research interests include robot motion planning, autonomous navigation, multi-robot systems, and robotic trolley collection. During graduate study, I worked with the Robotics, Perception and Intelligence Laboratory at SUSTech on collaborative trolley transportation, hexapod robot motion planning in dynamic rough terrain, and autonomous navigation for service robots.</p>
+  <p>My recent research focuses on autonomous navigation and human-robot interaction, particularly developing robot mobility and navigation capabilities for dynamic environments beyond the laboratory and human-centered field applications.
+</p>
 
 </section>
 
@@ -64,36 +58,71 @@ latest_posts:
   <h2>Social Navigation</h2>
   <div class="project-list">
     <div class="project-item">
-      <h3>Collaborative Trolley Transportation</h3>
-      <p>Multi-robot planning and control for autonomous nonholonomic robots transporting luggage trolleys in structured service environments.</p>
+      <div class="project-media"></div>
+      <div class="project-content">
+        <h3>Intention-Aware Crowd Navigation</h3>
+        <p>Learning robot visual navigation in crowds via intention-aware scene representations for socially aware motion in human environments.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#bao2026learning' | relative_url }}">RA-L 2026</a>
+        </div>
+      </div>
     </div>
     <div class="project-item">
-      <h3>Autonomous Trolley Collection</h3>
-      <p>System design, prescribed-performance control, and implementation for multiple-trolley collection with mobile robots.</p>
+      <div class="project-media"></div>
+      <div class="project-content">
+        <h3>Person-Following Navigation</h3>
+        <p>Field-based search for robot person following in unknown dynamic environments.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#ye2026rpf' | relative_url }}">T-MECH 2025</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-item">
+      <div class="project-media"></div>
+      <div class="project-content">
+        <h3>Neural Adaptive Motion Planning</h3>
+        <p>Neural adaptive motion planning for mobile robots in dynamic environments.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#sun2025namr' | relative_url }}">T-ASE 2025</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <h2>Mobile Manipulation</h2>
   <div class="project-list">
     <div class="project-item">
-      <h3>Semantic Scene Understanding</h3>
-      <p>Relationship-oriented semantic scene reasoning for daily manipulation tasks and robotic grasping experiments.</p>
+      <div class="project-media"></div>
+      <div class="project-content">
+        <h3>Collaborative Trolley Transportation</h3>
+        <p>Multi-robot planning and control for autonomous nonholonomic robots transporting luggage trolleys in structured service environments.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#xia2023collaborative' | relative_url }}">IROS 2023</a>
+          <a href="{{ '/publications/#xie2025autonomous' | relative_url }}">JFR 2025</a>
+        </div>
+      </div>
     </div>
     <div class="project-item">
-      <h3>Service Robot Navigation</h3>
-      <p>Pedestrian-following and autonomous mobile-base navigation for a throat-swab robot project.</p>
-    </div>
-  </div>
-
-  <h2>Other</h2>
-  <div class="project-list">
-    <div class="project-item">
-      <h3>Hexapod Motion Planning</h3>
-      <p>Motion planning for legged robots operating in dynamic rough-terrain environments.</p>
+      <div class="project-media"></div>
+      <div class="project-content">
+        <h3>Robot Cart-Pushing</h3>
+        <p>Integrating maneuverable planning and adaptive control for robot cart-pushing under disturbances.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#zhang2026integrating' | relative_url }}">arXiv 2026</a>
+        </div>
+      </div>
     </div>
     <div class="project-item">
-      <h3>E-Textile Sensing</h3>
-      <p>Batteryless RFID and embroidered passive sensors for wearable displacement, strain, and human-activity tracking.</p>
+      <div class="project-media"></div>
+      <div class="project-content">
+        <h3>Autonomous Trolley Collection</h3>
+        <p>System design, prescribed-performance control, and implementation for multiple-trolley collection with mobile robots.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#pang2026davpc' | relative_url }}">arXiv 2026</a>
+          <a href="{{ '/publications/#xie2025autonomous' | relative_url }}">JFR 2025</a>
+          <a href="{{ '/publications/#xi2024disturbance' | relative_url }}">PCS 2024</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

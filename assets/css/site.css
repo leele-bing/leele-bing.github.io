@@ -1,10 +1,17 @@
 /* Site typography scale: title, body, note. */
 :root {
+  --global-theme-color: rgb(43, 183, 179);
+  --global-hover-color: rgb(43, 183, 179);
   --site-title-size: 2rem;
   --site-text-size: calc(1rem + 2px);
   --site-note-size: 1rem;
-  --site-hero-title-size: 2.25rem;
+  --site-hero-title-size: 2.5rem;
   --site-profile-link-size: 1.8rem;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: rgb(43, 183, 179);
+  --global-hover-color: rgb(43, 183, 179);
 }
 
 body {
@@ -33,38 +40,29 @@ body:has(.home-about) .post-title::after {
   font-weight: 800;
 }
 
+.navbar-brand.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .profile.float-right {
-  width: 40%;
-  max-width: 430px;
-  margin-left: 2.75rem;
+  width: auto;
+  max-width: none;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
   margin-bottom: 1.75rem;
 }
 
-.profile .more-info {
-  margin-top: 0.85rem;
-  text-align: center;
-}
-
-.profile .more-info p {
+.profile.float-right figure,
+.profile.float-right picture {
   display: block;
-  margin-bottom: 0.45rem;
 }
 
-.profile-links {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: var(--site-profile-link-size);
-}
-
-.profile-links a {
-  color: var(--global-text-color);
-}
-
-.profile-links a:hover {
-  color: var(--global-theme-color);
-  text-decoration: none;
+.profile.float-right img {
+  width: auto;
+  height: clamp(16rem, 28vw, 19rem);
+  object-fit: cover;
 }
 
 .home-section {
@@ -79,7 +77,7 @@ body:has(.home-about) .post-title::after {
 
 .home-section h1 {
   font-size: var(--site-title-size);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
@@ -126,19 +124,55 @@ body:has(.home-about) .post-title::after {
 
 .home-projects .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.4rem;
   margin-top: 1rem;
 }
 
 .home-projects .project-item {
+  display: grid;
+  grid-template-columns: minmax(180px, 28%) 1fr;
+  gap: 1.25rem;
+  align-items: start;
   border-left: 3px solid var(--global-theme-color);
-  padding: 0.25rem 0 0.25rem 1rem;
+  padding: 0.35rem 0 0.35rem 1rem;
+}
+
+.home-projects .project-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--global-divider-color);
+  background: color-mix(in srgb, var(--global-card-bg-color) 72%, var(--global-divider-color));
+  overflow: hidden;
+}
+
+.home-projects .project-media img,
+.home-projects .project-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .home-projects .project-item h3 {
   font-size: var(--site-text-size);
+  font-weight: bolder;
   margin-bottom: 0.35rem;
+}
+
+.home-projects .project-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: var(--site-note-size);
+}
+
+.home-projects .project-links a::before {
+  content: "[";
+}
+
+.home-projects .project-links a::after {
+  content: "]";
 }
 
 .publication-section {
@@ -147,7 +181,7 @@ body:has(.home-about) .post-title::after {
 
 .publication-section h2 {
   font-size: var(--site-title-size);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 
@@ -165,13 +199,25 @@ body:has(.publications) .post-header {
 }
 
 .publications ol.bibliography li .abbr {
-  flex: 0 0 8.5rem;
-  max-width: 8.5rem;
+  flex: 0 0 20rem;
+  max-width: 20rem;
+}
+
+.publications ol.bibliography li:has(.preview) .abbr abbr {
+  display: none;
+}
+
+.publications ol.bibliography li .preview {
+  display: block;
+  width: 100%;
+  height: 11.2rem;
+  object-fit: contain;
 }
 
 .publications ol.bibliography li .row > div[id] {
   flex: 1 1 auto;
   max-width: none;
+  scroll-margin-top: 5rem;
 }
 
 .publications h2.bibliography {
@@ -253,12 +299,22 @@ body:has(.publications) .post-header {
   .profile.float-right {
     width: 100%;
     max-width: none;
+    margin-top: 0;
     margin-left: 0;
+  }
+
+  .profile.float-right img {
+    width: 100%;
+    height: auto;
   }
 
   .home-news .news-list li {
     grid-template-columns: 1fr;
     gap: 0.25rem;
+  }
+
+  .home-projects .project-item {
+    grid-template-columns: 1fr;
   }
 
   .publications ol.bibliography li .row {

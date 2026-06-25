@@ -2,7 +2,8 @@
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 email: chnxbing1@gmail.com
-github_username: leele-bing
 scholar_userid: 7lnJtCgAAAAJ
+github_username: leele-bing
+cv_pdf: /assets/site/pdf/resume_1_0_0.pdf
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
