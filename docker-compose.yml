@@ -1,8 +1,9 @@
 # this file uses prebuilt image in dockerhub
+version: "3.3"
+
 services:
   jekyll:
     image: amirpourmand/al-folio:latest
-    build: .
     command: /srv/jekyll/bin/entry_point.sh
     # uncomment these if you are having this issue with the build:
     # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
@@ -14,7 +15,7 @@ services:
     #     USERID: # id -u
     #     USERNAME: # echo $USER
     ports:
-      - 8080:8080
+      - 8081:8080
       - 35729:35729
     volumes:
       - .:/srv/jekyll

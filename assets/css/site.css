@@ -1,0 +1,272 @@
+/* Site typography scale: title, body, note. */
+:root {
+  --site-title-size: 2rem;
+  --site-text-size: calc(1rem + 2px);
+  --site-note-size: 1rem;
+  --site-hero-title-size: 2.25rem;
+  --site-profile-link-size: 1.8rem;
+}
+
+body {
+  font-size: var(--site-text-size);
+}
+
+.post-title,
+.home-section h1,
+.home-section h2,
+.home-news .news-date,
+.publication-section h2,
+.publications h2.bibliography {
+  font-family: monospace;
+}
+
+body:has(.home-about) .post-title {
+  font-size: var(--site-hero-title-size);
+  font-weight: 800;
+}
+
+body:has(.home-about) .post-title::after {
+  content: " 夏丙一";
+}
+
+.navbar-brand {
+  font-weight: 800;
+}
+
+.profile.float-right {
+  width: 40%;
+  max-width: 430px;
+  margin-left: 2.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.profile .more-info {
+  margin-top: 0.85rem;
+  text-align: center;
+}
+
+.profile .more-info p {
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.profile-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: var(--site-profile-link-size);
+}
+
+.profile-links a {
+  color: var(--global-text-color);
+}
+
+.profile-links a:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.home-section {
+  padding: 3.25rem 0;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.home-section:first-of-type {
+  border-top: 0;
+  padding-top: 1.5rem;
+}
+
+.home-section h1 {
+  font-size: var(--site-title-size);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.home-news {
+  padding: 2rem 0;
+}
+
+.home-section p:last-child {
+  margin-bottom: 0;
+}
+
+.home-news .news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-news .news-list li {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1rem;
+  padding: 0.42rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--global-divider-color) 70%, transparent);
+}
+
+.home-news .news-list li:first-child {
+  border-top: 0;
+}
+
+.home-news .news-date {
+  font-size: var(--site-note-size);
+  color: var(--global-theme-color);
+}
+
+.home-news .news-text {
+  font-size: var(--site-note-size);
+  line-height: 1.28;
+}
+
+.home-projects h2 {
+  font-size: var(--site-text-size);
+  margin-top: 2.25rem;
+}
+
+.home-projects .project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+
+.home-projects .project-item {
+  border-left: 3px solid var(--global-theme-color);
+  padding: 0.25rem 0 0.25rem 1rem;
+}
+
+.home-projects .project-item h3 {
+  font-size: var(--site-text-size);
+  margin-bottom: 0.35rem;
+}
+
+.publication-section {
+  margin-top: 2rem;
+}
+
+.publication-section h2 {
+  font-size: var(--site-title-size);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+body:has(.publications) .post-header {
+  display: none;
+}
+
+.publications {
+  margin-top: 0;
+}
+
+.publications ol.bibliography li .row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.publications ol.bibliography li .abbr {
+  flex: 0 0 8.5rem;
+  max-width: 8.5rem;
+}
+
+.publications ol.bibliography li .row > div[id] {
+  flex: 1 1 auto;
+  max-width: none;
+}
+
+.publications h2.bibliography {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--site-note-size);
+  font-weight: 600;
+  border-top: 0 !important;
+  padding-top: 0 !important;
+  margin-top: 1.2rem !important;
+  margin-bottom: 0.65rem;
+  color: var(--global-text-color-light) !important;
+  text-align: right;
+}
+
+.publications h2.bibliography::before {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.publications ol.bibliography li .title {
+  font-size: var(--site-text-size);
+}
+
+.publications ol.bibliography li .author,
+.publications ol.bibliography li .periodical {
+  font-size: var(--site-note-size);
+}
+
+.publications ol.bibliography li .abbr,
+.publications ol.bibliography li .abbr abbr,
+.publications ol.bibliography li .links a.btn {
+  font-size: var(--site-note-size);
+}
+
+.publications ol.bibliography li .links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+
+.publications ol.bibliography li .links a.btn {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--global-theme-color);
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.publications ol.bibliography li .links a.btn::before {
+  content: "[";
+}
+
+.publications ol.bibliography li .links a.btn::after {
+  content: "]";
+}
+
+.publications ol.bibliography li .links a.btn:hover,
+.publications ol.bibliography li .links a.btn:focus {
+  background: transparent;
+  color: var(--global-theme-color);
+  text-decoration: underline;
+  box-shadow: none;
+}
+
+@media (max-width: 575px) {
+  .home-section {
+    padding: 2.5rem 0;
+  }
+
+  .profile.float-right {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .home-news .news-list li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .publications ol.bibliography li .row {
+    flex-wrap: wrap;
+  }
+
+  .publications ol.bibliography li .abbr {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
