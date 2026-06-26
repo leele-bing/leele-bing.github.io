@@ -31,10 +31,22 @@
         {% if video_preview_exts contains preview_ext %}
           {% if entry.preview contains '://' %}
             {% assign preview_video_path = entry.preview %}
+            {% assign preview_poster_path = null %}
           {% else %}
             {% assign preview_video_path = entry.preview | prepend: '/assets/video/' | relative_url %}
+            {% assign preview_poster_path = entry.preview | replace: preview_ext, 'jpg' | prepend: '/assets/img/publication_preview/' | relative_url %}
           {% endif %}
-          <video class="preview z-depth-1 rounded" autoplay muted loop playsinline preload="metadata">
+          <video
+            class="preview z-depth-1 rounded"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            {% if preview_poster_path %}
+              poster="{{ preview_poster_path }}"
+            {% endif %}
+          >
             <source src="{{ preview_video_path }}" type="video/{{ preview_ext }}">
           </video>
         {% elsif entry.preview contains '://' %}

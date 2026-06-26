@@ -1,4 +1,6 @@
 /* Site typography scale: title, body, note. */
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
 :root {
   --global-theme-color: rgb(43, 183, 179);
   --global-hover-color: rgb(43, 183, 179);
@@ -18,18 +20,17 @@ body {
   font-size: var(--site-text-size);
 }
 
-.post-title,
 .home-section h1,
 .home-section h2,
 .home-news .news-date,
 .publication-section h2,
 .publications h2.bibliography {
-  font-family: monospace;
+  font-family: "Electrolize";
 }
 
 body:has(.home-about) .post-title {
   font-size: var(--site-hero-title-size);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 body:has(.home-about) .post-title::after {
@@ -37,7 +38,7 @@ body:has(.home-about) .post-title::after {
 }
 
 .navbar-brand {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .navbar-brand.social {
@@ -75,10 +76,17 @@ body:has(.home-about) .post-title::after {
   padding-top: 1.5rem;
 }
 
+.home-about p,
+.home-projects .research-intro,
+.home-projects .project-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .home-section h1 {
   font-size: var(--site-title-size);
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .home-news {
@@ -119,7 +127,11 @@ body:has(.home-about) .post-title::after {
 
 .home-projects h2 {
   font-size: var(--site-text-size);
-  margin-top: 2.25rem;
+  margin-top: 2rem;
+}
+
+.home-projects .research-intro {
+  margin: -0.4rem 0 1.1rem;
 }
 
 .home-projects .project-list {
@@ -131,7 +143,7 @@ body:has(.home-about) .post-title::after {
 
 .home-projects .project-item {
   display: grid;
-  grid-template-columns: minmax(180px, 28%) 1fr;
+  grid-template-columns: minmax(240px, 36%) 1fr;
   gap: 1.25rem;
   align-items: start;
   border-left: 3px solid var(--global-theme-color);
@@ -157,7 +169,7 @@ body:has(.home-about) .post-title::after {
 .home-projects .project-item h3 {
   font-size: var(--site-text-size);
   font-weight: bolder;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
 }
 
 .home-projects .project-links {
@@ -210,7 +222,7 @@ body:has(.publications) .post-header {
 .publications ol.bibliography li .preview {
   display: block;
   width: 100%;
-  height: 11.2rem;
+  height: 12rem;
   object-fit: contain;
 }
 

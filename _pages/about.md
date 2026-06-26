@@ -36,19 +36,14 @@ latest_posts:
 
 <section class="home-section home-news">
   <h1>News</h1>
+  {% assign home_news = site.news | sort: "date" | reverse %}
   <ul class="news-list">
-    <li>
-      <span class="news-date">2025/03</span>
-      <span class="news-text">NAMR-RRT was published in IEEE Transactions on Automation Science and Engineering.</span>
-    </li>
-    <li>
-      <span class="news-date">2025/01</span>
-      <span class="news-text">Autonomous multiple-trolley collection work appeared in Journal of Field Robotics.</span>
-    </li>
-    <li>
-      <span class="news-date">2024/09</span>
-      <span class="news-text">Smart mobility with agent-based foundation models was published in IEEE Transactions on Intelligent Vehicles.</span>
-    </li>
+    {% for item in home_news limit: 3 %}
+      <li>
+        <span class="news-date">{{ item.date | date: "%Y/%m" }}</span>
+        <span class="news-text">{{ item.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+      </li>
+    {% endfor %}
   </ul>
 </section>
 
@@ -56,32 +51,57 @@ latest_posts:
   <h1>Research</h1>
 
   <h2>Social Navigation</h2>
+  <p class="research-intro">
+  Social navigation aims to enable robots to move safely, efficiently, and naturally in environments shared with humans. My research mainly addresses point-to-point navigation in crowded and dynamic environments through learning-based methods, covering data collection, global path planning, and RL-based navigation policies. Beyond general navigation tasks, I also explore person following as a special form of social navigation.
+  </p>
   <div class="project-list">
     <div class="project-item">
-      <div class="project-media"></div>
+      <div class="project-media">
+        <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/publication_preview/navisaaclab_web.jpg' | relative_url }}">
+          <source src="{{ '/assets/video/navisaaclab_web.mp4' | relative_url }}" type="video/mp4">
+        </video>
+      </div>
+      <div class="project-content">
+        <h3>Human-Aware Navigation Simulation and Benchmark</h3>
+        <p>NavIsaacLab builds photo-realistic, physics-based crowd simulation on Isaac Lab, using data-driven pedestrian generation for providing richer visual feedback and GPU-parallel environments to accelerate data collection and training human-aware navigation policies.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#xia2026navisaaclab' | relative_url }}">arXiv 2026</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-item">
+      <div class="project-media">
+        <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/publication_preview/bev_web.jpg' | relative_url }}">
+          <source src="{{ '/assets/video/bev_web.mp4' | relative_url }}" type="video/mp4">
+        </video>
+      </div>
       <div class="project-content">
         <h3>Intention-Aware Crowd Navigation</h3>
-        <p>Learning robot visual navigation in crowds via intention-aware scene representations for socially aware motion in human environments.</p>
+        <p>iCrowdNav learns RL-based crowd navigation policies from RGB-D observations by combining occupancy features with human pose cues, enabling the robot to infer pedestrian intentions and navigate more safely in dense crowds.</p>
         <div class="project-links">
           <a href="{{ '/publications/#bao2026learning' | relative_url }}">RA-L 2026</a>
         </div>
       </div>
     </div>
     <div class="project-item">
-      <div class="project-media"></div>
+      <div class="project-media">
+        <img src="{{ '/assets/img/publication_preview/rpf_search.gif' | relative_url }}" alt="Person-following navigation preview">
+      </div>
       <div class="project-content">
-        <h3>Person-Following Navigation</h3>
-        <p>Field-based search for robot person following in unknown dynamic environments.</p>
+        <h3>Person-Following</h3>
+        <p>RPF-Search addresses target loss in unknown and dynamic environments, using belief-guided fields for topographic occlusions and adaptive search strategies for moving pedestrian occluders.</p>
         <div class="project-links">
           <a href="{{ '/publications/#ye2026rpf' | relative_url }}">T-MECH 2025</a>
         </div>
       </div>
     </div>
     <div class="project-item">
-      <div class="project-media"></div>
+      <div class="project-media">
+        <img src="{{ '/assets/img/publication_preview/namr.gif' | relative_url }}" alt="Neural adaptive motion planning preview">
+      </div>
       <div class="project-content">
-        <h3>Neural Adaptive Motion Planning</h3>
-        <p>Neural adaptive motion planning for mobile robots in dynamic environments.</p>
+        <h3>Neural Adaptive Path Planning</h3>
+        <p>NAMR-RRT improves sampling-based planning methods by using neural heuristic regions to focus sampling on promising areas, reducing unnecessary node exploration for real-time computation in dynamic environments.</p>
         <div class="project-links">
           <a href="{{ '/publications/#sun2025namr' | relative_url }}">T-ASE 2025</a>
         </div>
@@ -89,38 +109,47 @@ latest_posts:
     </div>
   </div>
 
-  <h2>Mobile Manipulation</h2>
+  <h2>Mobile Manipulation: Cart Pushing, Collection, and Transportation</h2>
+  <p class="research-intro">
+  My research in mobile manipulation focuses on wheeled objects, such as carts, trolleys, and wheelchairs. We develop practical robotic applications built around cart pushing to automate manual trolley collection. We built a full-stack robotic system that integrates localization, perception, manipulation, formation control, and cooperative transportation, enabling two mobile robots to collect scattered carts, arrange them into a queue, and transport them to a target location. The robotic platform was iterated through three versions, evolving from a simple gripper-based mechanism to a dual-arm manipulation system.
+  </p>
   <div class="project-list">
     <div class="project-item">
-      <div class="project-media"></div>
+      <div class="project-media">
+        <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/publication_preview/transport_web.jpg' | relative_url }}">
+          <source src="{{ '/assets/video/transport_web.mp4' | relative_url }}" type="video/mp4">
+        </video>
+      </div>
       <div class="project-content">
         <h3>Collaborative Trolley Transportation</h3>
-        <p>Multi-robot planning and control for autonomous nonholonomic robots transporting luggage trolleys in structured service environments.</p>
+        <p>This work develops an autonomous multi-robot system for transporting long lines of luggage trolleys, with a hierarchical framework for feasible path generation, online motion planning, and feedback control under coupled nonholonomic constraints.</p>
         <div class="project-links">
           <a href="{{ '/publications/#xia2023collaborative' | relative_url }}">IROS 2023</a>
-          <a href="{{ '/publications/#xie2025autonomous' | relative_url }}">JFR 2025</a>
         </div>
       </div>
     </div>
     <div class="project-item">
-      <div class="project-media"></div>
+      <div class="project-media">
+        <img src="{{ '/assets/img/publication_preview/cart.png' | relative_url }}" alt="Robot cart-pushing preview">
+      </div>
       <div class="project-content">
         <h3>Robot Cart-Pushing</h3>
-        <p>Integrating maneuverable planning and adaptive control for robot cart-pushing under disturbances.</p>
+        <p>This work combines maneuverable push-pose planning with disturbance-rejection control, allowing mobile robots to push carts flexibly and robustly despite payload variation, redundancy, and external disturbances.</p>
         <div class="project-links">
           <a href="{{ '/publications/#zhang2026integrating' | relative_url }}">arXiv 2026</a>
         </div>
       </div>
     </div>
     <div class="project-item">
-      <div class="project-media"></div>
+      <div class="project-media">
+        <img src="{{ '/assets/img/publication_preview/vpc.png' | relative_url }}" alt="Autonomous trolley collection preview">
+      </div>
       <div class="project-content">
         <h3>Autonomous Trolley Collection</h3>
-        <p>System design, prescribed-performance control, and implementation for multiple-trolley collection with mobile robots.</p>
+        <p>This research builds a complete multiple-trolley collection system, including lightweight docking hardware, vision-based control, and disturbance-aware visual predictive control for accurate and stable trolley alignment in real service scenarios.</p>
         <div class="project-links">
           <a href="{{ '/publications/#pang2026davpc' | relative_url }}">arXiv 2026</a>
           <a href="{{ '/publications/#xie2025autonomous' | relative_url }}">JFR 2025</a>
-          <a href="{{ '/publications/#xi2024disturbance' | relative_url }}">PCS 2024</a>
         </div>
       </div>
     </div>
