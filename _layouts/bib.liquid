@@ -34,7 +34,11 @@
             {% assign preview_poster_path = null %}
           {% else %}
             {% assign preview_video_path = entry.preview | prepend: '/assets/video/' | relative_url %}
-            {% assign preview_poster_path = entry.preview | replace: preview_ext, 'jpg' | prepend: '/assets/img/publication_preview/' | relative_url %}
+            {% assign preview_poster_path = entry.preview
+              | replace: preview_ext, 'jpg'
+              | prepend: '/assets/img/publication_preview/'
+              | relative_url
+            %}
           {% endif %}
           <video
             class="preview z-depth-1 rounded"

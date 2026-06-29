@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper was published in *IEEE Robotics and Automation Letters*, titled "Learning Robot Visual Navigation in Crowds via Intention-Aware Scene Representations".
+One paper was published in _IEEE Robotics and Automation Letters_, titled "Learning Robot Visual Navigation in Crowds via Intention-Aware Scene Representations".

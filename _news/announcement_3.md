@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper was published in *IEEE Transactions on Automation Science and Engineering*, titled "NAMR-RRT: Neural Adaptive Motion Planning for Mobile Robots in Dynamic Environments".
+One paper was published in _IEEE Transactions on Automation Science and Engineering_, titled "NAMR-RRT: Neural Adaptive Motion Planning for Mobile Robots in Dynamic Environments".
