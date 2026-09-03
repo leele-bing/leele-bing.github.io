@@ -50,6 +50,25 @@ latest_posts:
 <section class="home-section home-projects">
   <h1>Research</h1>
 
+  <h2>Embodied Urban Navigation</h2>
+  <p class="research-intro">
+  Learning embodied urban navigation from web-scale videos focuses on scalable point-goal navigation in city environments, with an emphasis on long-tail scenarios and real-world transfer.
+  </p>
+  <div class="project-list">
+    <div class="project-item">
+      <div class="project-media">
+        <img src="{{ '/assets/img/publication_preview/wildnav-data.png' | relative_url }}" alt="Exposing the Long-tail in Embodied Urban Navigation preview">
+      </div>
+      <div class="project-content">
+        <h3>Learning embodied urban navigation from web-scale videos</h3>
+        <p>It learns point-goal urban navigation from web-scale videos. The framework uses trajectory annotation and navigation semantics to train interpretable policies. It also analyzes long-tail scenarios and improves real-world transfer.</p>
+        <div class="project-links">
+          <a href="{{ '/publications/#xia2026longtail' | relative_url }}">arXiv 2026</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <h2>Social Navigation</h2>
   <p class="research-intro">
   Social navigation aims to enable robots to move safely, efficiently, and naturally in environments shared with humans. My research mainly addresses point-to-point navigation in crowded and dynamic environments through learning-based methods, covering data collection, global path planning, and RL-based navigation policies. Beyond general navigation tasks, I also explore person following as a special form of social navigation.
@@ -65,7 +84,7 @@ latest_posts:
         <h3>Human-Aware Navigation Simulation and Benchmark</h3>
         <p>NavIsaacLab builds photo-realistic, physics-based crowd simulation on Isaac Lab, using data-driven pedestrian generation for providing richer visual feedback and GPU-parallel environments to accelerate data collection and training human-aware navigation policies.</p>
         <div class="project-links">
-          <a href="{{ '/publications/#xia2026navisaaclab' | relative_url }}">arXiv 2026</a>
+          <a href="{{ '/publications/#xia2026navisaaclab' | relative_url }}">T-ASE 2026</a>
         </div>
       </div>
     </div>
