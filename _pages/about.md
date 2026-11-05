@@ -64,6 +64,7 @@ latest_posts:
         <p>It learns point-goal urban navigation from web-scale videos. The framework uses trajectory annotation and navigation semantics to train interpretable policies. It also analyzes long-tail scenarios and improves real-world transfer.</p>
         <div class="project-links">
           <a href="{{ '/publications/#xia2026longtail' | relative_url }}">arXiv 2026</a>
+          <a href="https://broln7.github.io/wildnav-web/">Website</a>
         </div>
       </div>
     </div>
@@ -85,6 +86,7 @@ latest_posts:
         <p>NavIsaacLab builds photo-realistic, physics-based crowd simulation on Isaac Lab, using data-driven pedestrian generation for providing richer visual feedback and GPU-parallel environments to accelerate data collection and training human-aware navigation policies.</p>
         <div class="project-links">
           <a href="{{ '/publications/#xia2026navisaaclab' | relative_url }}">T-ASE 2026</a>
+          <a href="https://broln7.github.io/NavIsaacLab-web/">Website</a>
         </div>
       </div>
     </div>
@@ -155,7 +157,7 @@ latest_posts:
         <h3>Robot Cart-Pushing</h3>
         <p>This work combines maneuverable push-pose planning with disturbance-rejection control, allowing mobile robots to push carts flexibly and robustly despite payload variation, redundancy, and external disturbances.</p>
         <div class="project-links">
-          <a href="{{ '/publications/#zhang2026integrating' | relative_url }}">arXiv 2026</a>
+          <a href="{{ '/publications/#zhang2026integrating' | relative_url }}">T-MECH (Accepted)</a>
         </div>
       </div>
     </div>
